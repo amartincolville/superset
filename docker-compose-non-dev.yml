@@ -23,7 +23,7 @@ x-superset-volumes: &superset-volumes
   - ./docker:/app/docker
   - superset_home:/app/superset_home
 
-version: "3.7"
+version: "3.8"
 services:
   redis:
     image: redis:latest
@@ -34,7 +34,7 @@ services:
 
   db:
     env_file: docker/.env-non-dev
-    image: postgres:10
+    image: postgres:14
     container_name: superset_db
     restart: unless-stopped
     volumes:
